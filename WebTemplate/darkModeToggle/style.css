@@ -1,0 +1,126 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body {
+    font-family:Arial, sans-serif;
+    background-color:#fff;
+    color:#222;
+    transition: all .3s ease;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    transition:background-color .5s ease, color .5s ease;
+}
+
+.container{
+    text-align:center;
+    background-color:#f4f4f4;
+    padding: 2rem 3rem;
+    border-radius:12px;
+    box-shadow:0 0 10px rgba(0,0,0,.1);
+    transition: background-color .5s ease;
+}
+
+/* Toggle switch */
+
+.toggle-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.switch {
+    position:relative;
+    display:inline-block;
+    width:60px;
+    height:34px;
+}
+
+.switch input {
+    display:none;
+}
+
+.slider{
+    position:absolute;
+    cursor: pointer;
+    background-color:#ccc;
+    border-radius: 34px;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    transition: .4s;
+}
+
+.slider:before{
+    position:absolute;
+    content:"";
+    height:26px;
+    width:26px;
+    border-radius:50%;
+    background-color: white;
+    left:4px;
+    bottom:4px;
+    transition:.4s;
+}
+
+input:checked + .slider {
+    background-color: #2196f3;
+}
+
+input:checked + .slider:before{
+    transform:translateX(26px);
+}
+
+/* toggle round */
+.slider.round {
+    border-radius:34px;
+}
+
+.slider.round:before{
+    border-radius:50%;
+}
+
+#theme-label {
+    font-size:1.1rem;
+    user-select: none;
+}
+
+/* #toggle-btn {
+    margin-top:1.5rem;
+    padding:.6rem 1.2rem;
+    font-size:1rem;
+    border:none;
+    border-radius:8px;
+    background-color:#007bff;
+    color:white;
+    cursor:pointer;
+    transition:all .3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,.1);
+}
+
+#toggle-btn:hover{
+    transform: scale(1.05);
+    background-color:#0056b3;
+} */
+
+body.dark {
+    background-color:#1e1e1e;
+    color:#eee;
+}
+
+body.dark .container {
+    background-color:#2c2c2c;
+    box-shadow: 0 0 15px rgba(255,255,255,.05);
+}
+
+body.dark #toggle-btn{
+    background-color:#f1c40f;
+    color:black;
+}
